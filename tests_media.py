@@ -15,8 +15,8 @@ class MediaTests(TestCase):
 
 		#Assert
 		self.assertEqual(rogueOne.title, title)
-		self.assertEqual(rogueOne.posterUrl, url_to_poster)
-		self.assertEqual(rogueOne.trailerUrl, url_to_trailer)
+		self.assertEqual(rogueOne.poster_image_url, url_to_poster)
+		self.assertEqual(rogueOne.trailer_youtube_url, url_to_trailer)
 
 if __name__ == '__main__':
 	main()
