@@ -37,7 +37,7 @@ class EntertainmentCenter(object):
 
         armageddon = Movie(
             title="Armageddon",
-            posterUrl="https://goo.gl/2VTO2f",
+            posterUrl="http://bit.ly/2qU7cA9",
             trailerUrl="https://youtu.be/kg_jH47u480")
 
         meet_joe_black = Movie(
