@@ -8,11 +8,8 @@ class EntertainmentCenterTests(TestCase):
 		# Arrange
 		number_of_movies = 6
 
-		# Act
-		entertainment_center = EntertainmentCenter()
-
 		# Assert
-		self.assertEquals(number_of_movies, entertainment_center.get_movies().__len__())
+		self.assertEquals(number_of_movies, EntertainmentCenter.get_movies().__len__())
 
 
 if __name__ == '__main__':
