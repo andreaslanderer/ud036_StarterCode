@@ -1,7 +1,7 @@
 """ This module contains the EntertainmentCenter class. """
 
-from media import Movie
 from fresh_tomatoes import open_movies_page
+
 
 class EntertainmentCenter(object):
 
@@ -9,51 +9,26 @@ class EntertainmentCenter(object):
     returns the list of movies and the other opens the
     browser in order to display the movies."""
 
-    @staticmethod
-    def get_movies():
+    def __init__(self, movies):
+        self.__movies = movies
 
-        """ This method returns the list of movies to be
-        displayed by the browser. """
+    @property
+    def movies(self):
 
-        spider_man = Movie(
-            title="Spiderman",
-            posterUrl="https://goo.gl/5b1XVu",
-            trailerUrl="https://youtu.be/TYMMOjBUPMM")
+        """ Get the list of movies """
 
-        pirates_of_the_caribbean = Movie(
-            title="Pirates of the Caribbean",
-            posterUrl="https://goo.gl/rVNEYW",
-            trailerUrl="https://youtu.be/naQr0uTrH_s")
+        return self.__movies
 
-        a_beautiful_mind = Movie(
-            title="A beautiful mind",
-            posterUrl="https://goo.gl/kRzPR5",
-            trailerUrl="https://youtu.be/aS_d0Ayjw4o")
+    @movies.setter
+    def movies(self, movies):
 
-        interstellar = Movie(
-            title="Interstellar",
-            posterUrl="https://goo.gl/zfIH18",
-            trailerUrl="https://youtu.be/zSWdZVtXT7E")
+        """ Set the list of movies """
 
-        armageddon = Movie(
-            title="Armageddon",
-            posterUrl="http://bit.ly/2qU7cA9",
-            trailerUrl="https://youtu.be/kg_jH47u480")
+        self.__movies = movies
 
-        meet_joe_black = Movie(
-            title="Meet Joe Black",
-            posterUrl="https://goo.gl/JuWd4h",
-            trailerUrl="https://youtu.be/_zIOjl93WrU")
-
-        return [spider_man, pirates_of_the_caribbean, a_beautiful_mind,
-                interstellar, armageddon, meet_joe_black]
-
-
-    @staticmethod
-    def play():
+    def play(self):
 
         """ This method opens the browser and displays the
         website. """
 
-        movies = EntertainmentCenter.get_movies()
-        open_movies_page(movies)
+        open_movies_page(self.__movies)
